@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400&display=swap');
+
+:root {
+  --bg-page: #FAF6F0;
+  --bg-paper: #FFFFFF;
+  --bg-soft: #F2EBDF;
+  --bg-elevated: #FCFAF6;
+  --bg-overlay: rgba(28, 22, 18, 0.55);
+
+  --border-soft: #E8DFD0;
+  --border-medium: #D4C5AB;
+  --border-strong: #A89878;
+
+  --terracotta: #B8553B;
+  --terracotta-soft: #D17A5F;
+  --terracotta-bg: #FBE9E0;
+  --terracotta-deep: #8C3F2A;
+
+  --moss: #5A7A4A;
+  --moss-soft: #7B9A6A;
+  --moss-bg: #E8EFE0;
+  --moss-deep: #3F5A33;
+
+  --ochre: #C9974A;
+  --ochre-bg: #FBF0DD;
+  --indigo: #3D5470;
+  --indigo-bg: #E0E5EE;
+
+  --ink: #1C1612;
+  --ink-soft: #3A2E24;
+  --text-primary: #2D241C;
+  --text-secondary: #6B5A48;
+  --text-muted: #8A7A66;
+  --text-faint: #B0A088;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  --r-xs: 4px; --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 20px; --r-full: 999px;
+  --shadow-sm: 0 1px 2px rgba(28, 22, 18, 0.04);
+  --shadow-md: 0 4px 16px rgba(28, 22, 18, 0.06);
+  --shadow-lg: 0 12px 40px rgba(28, 22, 18, 0.08);
+  --shadow-xl: 0 20px 60px rgba(28, 22, 18, 0.12);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body {
+  background: var(--bg-page); color: var(--text-primary);
+  font-family: var(--font-body); font-size: 14px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(184, 85, 59, 0.018) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-medium); border-radius: var(--r-full); border: 3px solid var(--bg-page); }
+::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
+
+.display { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; }
+.display-italic { font-family: var(--font-display); font-style: italic; font-weight: 400; }
+.mono { font-family: var(--font-mono); }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; color: var(--ink); letter-spacing: -0.015em; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, textarea, select { font-family: inherit; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideR { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideL { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+@keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+
+.fade-up { animation: fadeUp 0.5s var(--ease) both; }
+.fade-in { animation: fadeIn 0.4s ease both; }
+.scale-in { animation: scaleIn 0.3s var(--ease) both; }
+[data-stagger="1"] { animation-delay: 0.05s; }
+[data-stagger="2"] { animation-delay: 0.10s; }
+[data-stagger="3"] { animation-delay: 0.15s; }
+[data-stagger="4"] { animation-delay: 0.20s; }
+[data-stagger="5"] { animation-delay: 0.25s; }
+[data-stagger="6"] { animation-delay: 0.30s; }
