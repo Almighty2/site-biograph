@@ -3,6 +3,7 @@
 
 const BASE_URL = 'https://biograph-3.onrender.com/api/v1';
 
+
 function getToken() {
   return localStorage.getItem('biograf_token');
 }
